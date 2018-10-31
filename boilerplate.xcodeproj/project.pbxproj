@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2AB11D062D4A8DA826CF6137 /* libPods-boilerplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC893996CAA2BCF8C737D28 /* libPods-boilerplate.a */; };
+		300B327821888569000051EF /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300B327721888569000051EF /* RegisterController.swift */; };
+		300B327A21894DAC000051EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 300B327921894DAC000051EF /* GoogleService-Info.plist */; };
 		300E0436215DB8E200FB4EF5 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E0435215DB8E200FB4EF5 /* LoginController.swift */; };
 		30938821216AE5FC0070A17C /* mapscontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30938820216AE5FC0070A17C /* mapscontroller.swift */; };
 		30C41688216459010056645C /* menucell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C41687216459010056645C /* menucell.swift */; };
 		30C4168A216477E20056645C /* profilecontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C41689216477E20056645C /* profilecontroller.swift */; };
 		30C4168C216478490056645C /* feedscontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C4168B216478490056645C /* feedscontroller.swift */; };
 		30C4168E216478C70056645C /* settingcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C4168D216478C70056645C /* settingcontroller.swift */; };
-		30C41690216479A60056645C /* homecontroller2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C4168F216479A60056645C /* homecontroller2.swift */; };
 		30D3C1A8215C9870008D9904 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D3C1A7215C9870008D9904 /* AppDelegate.swift */; };
 		30D3C1AA215C9870008D9904 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D3C1A9215C9870008D9904 /* ViewController.swift */; };
 		30D3C1AD215C9870008D9904 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D3C1AB215C9870008D9904 /* Main.storyboard */; };
@@ -49,13 +50,14 @@
 /* Begin PBXFileReference section */
 		0EC893996CAA2BCF8C737D28 /* libPods-boilerplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-boilerplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18FD3FE7A6C750984BB65FA6 /* Pods-boilerplateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-boilerplateTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-boilerplateTests/Pods-boilerplateTests.debug.xcconfig"; sourceTree = "<group>"; };
+		300B327721888569000051EF /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		300B327921894DAC000051EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		300E0435215DB8E200FB4EF5 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		30938820216AE5FC0070A17C /* mapscontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapscontroller.swift; sourceTree = "<group>"; };
 		30C41687216459010056645C /* menucell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menucell.swift; sourceTree = "<group>"; };
 		30C41689216477E20056645C /* profilecontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profilecontroller.swift; sourceTree = "<group>"; };
 		30C4168B216478490056645C /* feedscontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = feedscontroller.swift; sourceTree = "<group>"; };
 		30C4168D216478C70056645C /* settingcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingcontroller.swift; sourceTree = "<group>"; };
-		30C4168F216479A60056645C /* homecontroller2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homecontroller2.swift; sourceTree = "<group>"; };
 		30D3C1A4215C9870008D9904 /* boilerplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = boilerplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D3C1A7215C9870008D9904 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30D3C1A9215C9870008D9904 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			children = (
 				30D3C1D6215C98CB008D9904 /* SWRevealViewController.h */,
 				30D3C1D7215C98CB008D9904 /* SWRevealViewController.m */,
+				300B327921894DAC000051EF /* GoogleService-Info.plist */,
 				30D3C1A7215C9870008D9904 /* AppDelegate.swift */,
 				30D3C1A9215C9870008D9904 /* ViewController.swift */,
 				30D3C1AB215C9870008D9904 /* Main.storyboard */,
@@ -152,8 +155,8 @@
 				30C41689216477E20056645C /* profilecontroller.swift */,
 				30C4168B216478490056645C /* feedscontroller.swift */,
 				30C4168D216478C70056645C /* settingcontroller.swift */,
-				30C4168F216479A60056645C /* homecontroller2.swift */,
 				30938820216AE5FC0070A17C /* mapscontroller.swift */,
+				300B327721888569000051EF /* RegisterController.swift */,
 			);
 			path = boilerplate;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30D3C1B2215C9871008D9904 /* LaunchScreen.storyboard in Resources */,
+				300B327A21894DAC000051EF /* GoogleService-Info.plist in Resources */,
 				30D3C1AF215C9871008D9904 /* Assets.xcassets in Resources */,
 				30D3C1AD215C9870008D9904 /* Main.storyboard in Resources */,
 			);
@@ -484,9 +488,9 @@
 				30D3C1AA215C9870008D9904 /* ViewController.swift in Sources */,
 				30938821216AE5FC0070A17C /* mapscontroller.swift in Sources */,
 				30D3C1A8215C9870008D9904 /* AppDelegate.swift in Sources */,
-				30C41690216479A60056645C /* homecontroller2.swift in Sources */,
 				30C4168C216478490056645C /* feedscontroller.swift in Sources */,
 				30D3C1D8215C98CB008D9904 /* SWRevealViewController.m in Sources */,
+				300B327821888569000051EF /* RegisterController.swift in Sources */,
 				30C41688216459010056645C /* menucell.swift in Sources */,
 				300E0436215DB8E200FB4EF5 /* LoginController.swift in Sources */,
 				30C4168A216477E20056645C /* profilecontroller.swift in Sources */,
@@ -667,7 +671,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XUR2D2723B;
 				INFOPLIST_FILE = boilerplate/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = my.com.tm.boiler.boilerplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "boilerplate/boilerplate-Bridging-Header.h";
@@ -686,7 +693,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XUR2D2723B;
 				INFOPLIST_FILE = boilerplate/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = my.com.tm.boiler.boilerplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "boilerplate/boilerplate-Bridging-Header.h";
@@ -704,7 +714,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XUR2D2723B;
 				INFOPLIST_FILE = boilerplateTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = my.com.tm.boiler.boilerplateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -722,7 +736,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XUR2D2723B;
 				INFOPLIST_FILE = boilerplateTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = my.com.tm.boiler.boilerplateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -739,7 +757,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XUR2D2723B;
 				INFOPLIST_FILE = boilerplateUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = my.com.tm.boiler.boilerplateUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -756,7 +778,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XUR2D2723B;
 				INFOPLIST_FILE = boilerplateUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = my.com.tm.boiler.boilerplateUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

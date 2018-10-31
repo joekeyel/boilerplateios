@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class menucontroller2: UIViewController,UITableViewDataSource,UITableViewDelegate {
   
@@ -44,7 +45,21 @@ class menucontroller2: UIViewController,UITableViewDataSource,UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: tableitem[indexPath.row], sender: self)
+        if(tableitem[indexPath.row] == "Sign Out"){
+            
+            try! FIRAuth.auth()!.signOut()
+            
+            
+            
+            self.performSegue(withIdentifier: tableitem[indexPath.row], sender: self)
+            
+            
+      
+        }else{
+              self.performSegue(withIdentifier: tableitem[indexPath.row], sender: self)
+            
+        }
+        
     }
 
 

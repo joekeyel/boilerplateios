@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginController: UIViewController {
 
@@ -17,6 +18,8 @@ class LoginController: UIViewController {
     @IBOutlet weak var loginbutton: UIButton!
     
     @IBOutlet weak var appicon: UIImageView!
+    
+    var msgfromregister:String = ""
     
     
     override func viewDidLoad() {
@@ -29,42 +32,97 @@ class LoginController: UIViewController {
         addLeftimage(textfield: passwordtext, addimg: passwordimage!)
         
         appicon.image = UIImage(named:"react")
+        
+        
+        print(msgfromregister)
+        
+            showToast(message: msgfromregister)
+        
 
        //this part to move the view above the keyboard when keyboard is showed up
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardshowup(notification:)),name: Notification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardshowup(notification:)),name: Notification.Name.UIKeyboardDidShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardshowup(notification:)),name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+       
         
     }
     
     
-    deinit{
-    
-        NotificationCenter.default.removeObserver(Notification.Name.UIKeyboardWillShow)
-        NotificationCenter.default.removeObserver(Notification.Name.UIKeyboardDidShow)
-        NotificationCenter.default.removeObserver(Notification.Name.UIKeyboardWillChangeFrame)
-    
+
+    @IBAction func loginactioN(_ sender: Any) {
+        
+        if (!(usernametext.text?.isEmpty)!){
+            FIRAuth.auth()?.signIn(withEmail: usernametext.text!, password: passwordtext.text!) {(user, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                                   self.showToast(message: error.localizedDescription)
+                }
+                else {
+                    print("User signed in!")
+                    if((FIRAuth.auth()?.currentUser?.isEmailVerified)!){
+                        
+                            print("Email sent")
+                                               self.showToast(message: "Verification Email has been sent")
+                            
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let initialViewController2 = storyboard.instantiateViewController(withIdentifier: "reveal") as! SWRevealViewController
+                            
+                            
+                            
+                            self.present(initialViewController2, animated: true)
+                            
+                            
+                    
+                        
+                        //At this point, the user will be taken to the next screen
+                    }else{
+                        self.showToast(message: "Please email verify your account first")
+                        
+                    }
+                    
+                }
+            }
+            
+        }
+        else{
+            
+            showToast(message: "You left email/password empty")
+        }
+        
+        
     }
-    //function obj c when keyboard shown up
+    @IBAction func loginaction(_ sender: UIButton) {
+        
+        
+        
+      
+        
+    }
     
-    @objc func keyboardshowup(notification:Notification){
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+      
         
+         if let keyboardFrame: NSValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+            
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let loginbuttony = loginbutton.frame.origin.y
+            let framey = view.frame.size.height
+            let distancemove = framey - (loginbuttony)-(keyboardRectangle.height)
+            view.frame.origin.y =  -distancemove
+            
+            print(loginbuttony)
+            return
+        }
+            
+            
+      
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification){
+        print("keyboardWillHide")
         
-        guard let keyboardrect = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else  {return
-        }
-        
-        if(notification.name == Notification.Name.UIKeyboardWillShow || notification.name == Notification.Name.UIKeyboardDidShow ){
-            
-            let distancemove = -keyboardrect.height + (loginbutton.frame.origin.y - view.frame.origin.y)
-            view.frame.origin.y = distancemove
-            
-            
-        }
-        else
-       {
-            view.frame.origin.y = 0
-        }
+        view.frame.origin.y = 0
     }
     
     //this is when user tap to dismiss keyboard
@@ -84,4 +142,28 @@ class LoginController: UIViewController {
 
    
 
+}
+extension UIViewController {
+    
+    func showToast(message : String) {
+        
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 100, y: self.view.frame.size.height-150, width: 200, height: 100))
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.textAlignment = .center;
+        toastLabel.font = UIFont(name: "Montserrat-Light", size: 12.0)
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.numberOfLines = 0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
+    
+    
 }
